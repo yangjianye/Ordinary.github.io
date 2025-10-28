@@ -1,0 +1,26 @@
+{
+  "name": "office-recording-game",
+  "version": "1.0.0",
+  "description": "办公室录音攻防战 - 一个选择式叙事游戏",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "deploy:github": "./deploy.sh",
+    "deploy:oss": "node oss-deploy.js"
+  },
+  "dependencies": {
+    "ali-oss": "^6.17.1"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "game",
+    "choice-based",
+    "office",
+    "narrative"
+  ]
+}

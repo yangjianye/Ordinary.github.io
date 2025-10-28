@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>办公室录音攻防战</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">办公室录音攻防战</h1>
+        
+        <!-- 游戏状态显示 -->
+        <div class="game-status">
+            <div class="status-item">
+                <span class="label">录音进度:</span>
+                <span id="recording-progress" class="value">0/3</span>
+            </div>
+            <div class="status-item">
+                <span class="label">当前场景:</span>
+                <span id="current-scene" class="value">准备开始</span>
+            </div>
+        </div>
+        
+        <!-- 游戏主界面 -->
+        <div class="game-screen">
+            <!-- 开始画面 -->
+            <div id="start-screen" class="screen active">
+                <div class="start-content">
+                    <h2>游戏介绍</h2>
+                    <p>你是一名办公室职员，需要秘密录音领导的违规对话作为证据。</p>
+                    <p>完成3次关键录音且未被发现即可获胜！</p>
+                    <button id="start-btn" class="btn primary">开始游戏</button>
+                </div>
+            </div>
+            
+            <!-- 游戏画面 -->
+            <div id="game-screen" class="screen">
+                <div class="scene-container">
+                    <!-- 场景背景 -->
+                    <div id="scene-background" class="scene-background">
+                        <!-- 背景图将通过CSS动态加载 -->
+                    </div>
+                    
+                    <!-- 角色区域 -->
+                    <div class="characters">
+                        <div id="leader" class="character leader">
+                            <!-- 领导角色 -->
+                        </div>
+                        <div id="player" class="character player">
+                            <!-- 玩家角色 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 对话区域 -->
+                    <div class="dialogue-box">
+                        <div id="speaker" class="speaker">领导</div>
+                        <div id="dialogue-text" class="dialogue-text">...</div>
+                    </div>
+                    
+                    <!-- 选项区域 -->
+                    <div class="choices-container">
+                        <button id="choice-a" class="choice-btn" data-choice="A"></button>
+                        <button id="choice-b" class="choice-btn" data-choice="B"></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 结果画面 -->
+            <div id="result-screen" class="screen">
+                <div class="result-content">
+                    <h2 id="result-title">游戏结果</h2>
+                    <p id="result-message">...</p>
+                    <button id="restart-btn" class="btn primary">重新开始</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 游戏说明 -->
+        <div class="game-instructions">
+            <h3>游戏说明</h3>
+            <ul>
+                <li>领导会进行探测动作，你需要选择合适的阻挡策略</li>
+                <li>成功阻挡可以继续录音，失败则会被发现</li>
+                <li>完成3次关键录音即可获胜</li>
+                <li>任何一次被发现都会导致游戏结束</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
